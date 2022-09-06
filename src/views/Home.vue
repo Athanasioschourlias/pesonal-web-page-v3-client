@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-90v flex flex flex-wrap">
+  <section class="min-h-90v flex flex-wrap">
     <div class="flex flex-2-1-40 text-center justify-center items-center flex-col">
       <h2 class="text-4xl
                     bg-clip-text

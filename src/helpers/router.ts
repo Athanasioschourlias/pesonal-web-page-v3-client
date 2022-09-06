@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
 		name: "DevelopmentChassis",
 		component: () => import("../views/DevelopmentChassis.vue"),
 	},
+	{
+		path: "/:pathMatch(.*)*",
+		name: "notFound",
+		component: () => import("../views/404.vue"),
+	}
 ]
 
 const router = createRouter({
