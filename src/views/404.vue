@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <section class="min-h-80v flex flex-col justify-center">
       <div class="flex self-center">
           <h1 class="text-6xl
