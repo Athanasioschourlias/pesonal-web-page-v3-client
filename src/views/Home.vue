@@ -34,14 +34,14 @@
       </router-link>
     </div>
     <div class="flex flex-1-1-40">
-      <img src="public/images/welcome_image.jpg"
+      <img src="/public/images/welcome_image.jpg"
                    class="object-cover" alt="welcome image"/>
     </div>
   </section>
 
   <section class="min-h-screen flex flex-wrap">
     <div class="flex flex-1-1-40 ">
-      <img src="public/images/car-in-straight-photoshoped.jpg"
+      <img src="/public/images/car-in-straight-photoshoped.jpg"
            class="object-cover w-full h-full"/>
     </div>
     <div class="flex

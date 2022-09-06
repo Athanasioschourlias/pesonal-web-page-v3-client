@@ -36,10 +36,6 @@ import { defineComponent } from "vue"
 
 export default defineComponent({
 	name: "NavigationBar",
-	props: {},
-	data() {
-		return {}
-	},
 	methods: {
 		thanos: function () {
 			console.log("thanos")

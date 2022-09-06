@@ -1,7 +1,7 @@
 <template>
   <div class="mx-2 lg:mx-24 flex flex-col h-auto">
     <section class="w-full h-52 flex items-center overflow-hidden justify-center">
-      <img class="object-cover" src="public/images/Development/coding(Dev).png"/>
+      <img class="object-cover" src="/public/images/Development/coding_dev.png"/>
       <h1 class="text-white
                   text-xl
                   sm:text-4xl
@@ -38,7 +38,3 @@ export default defineComponent({
 	}
 })
 </script>
-
-<style scoped>
-
-</style>

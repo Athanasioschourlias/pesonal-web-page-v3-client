@@ -51,7 +51,6 @@ import { defineComponent } from "vue"
 
 export default defineComponent({
 	name: "Ft",
-	props: {},
 	data() {
 		return {
 			date: Number
@@ -61,13 +60,6 @@ export default defineComponent({
 		getDate: function () {
 			return new Date().getFullYear()
 		}
-	},
-	methods: {
-
 	}
 })
 </script>
-
-<style scoped>
-
-</style>
