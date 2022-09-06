@@ -68,7 +68,9 @@ export default defineComponent({
 	},
 	methods: {
 		async getImageUrl(): Promise<ImageModuleObject> {
-			return import("../../images/Development/" + this.imgURL)
+			return {
+				default: `/images/Development/${this.imgURL}`
+			} as ImageModuleObject
 		},
 		goTo: function (){
 			if(this.routerTo)

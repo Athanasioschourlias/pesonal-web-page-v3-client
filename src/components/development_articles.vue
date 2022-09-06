@@ -68,7 +68,9 @@ export default defineComponent({
 	},
 	methods: {
 		async getImageUrl(imageUrl: string): Promise<ImageModuleObject> {
-			return import("../../images/articlePhotos/" + imageUrl)
+			return {
+				default: `/images/articlePhotos/${imageUrl}`
+			} as ImageModuleObject
 		},
 	}
 })
