@@ -276,260 +276,40 @@
       </div>
 <!--      Content of the section-->
       <div class="flex flex-row flex-wrap px-8 py-4">
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-2xl m-6">
-          <img class="w-full" src="/images/softwarePage/Screenshot_3.png"
-               alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-          </div>
-        </div>
+<!--        TODO - Make the picture take a specific amount of space and add a section for the user to visit the projects in gothub!!!!!!!-->
+        <software_page_info_cards
+            title="Personal Web Page"
+            img-url="/images/softwarePage/personal_page.png"
+            article-text="Hello there, this my personal web site(and the code for it). It started as a simple one
+                            page site but in the way I decided to add a few more things. This site is a hybrid if you
+                            want, because as mentioned it started as a simple singe page web portfolio to display some
+                            of my work so i decided not to use a framework but in the way all the add on's and the
+                            changes were made with bootstrap 4, in the future I plan to make the page again using VueJS or React,
+                            so the code would be more maintainable and the links between the files less confusing,
+                            so this code can be used as a good and structured template"
+            :hastags="['personalWebPage', 'firstTry', 'spaghettiCode']"/>
 
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-2xl m-6">
-          <img class="w-full" src="/images/softwarePage/Screenshot_3.png"
-               alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-          </div>
-        </div>
+        <software_page_info_cards
+            title="Crops Spy"
+            img-url="/images/softwarePage/precision_agricalture.png"
+            article-text="CropsSpy is an autonomous rover developed with one main goal in mind, and that is,
+                            For starter's to lower the usage of unnecessary fertilizer in agriculture and in the future
+                            experiment with ways to make the use of fertilizer's an unnecessary expense.
+                            Also an other main goal of this project is to reduce the CO2 footprint,
+                            since this will be an autonomus solar powered vehicle."
+            :hastags="['lessCarbonFootprint', 'AI', 'autonomousDriving', 'precisionAgriculture']"/>
 
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-2xl m-6">
-          <img class="w-full" src="/images/softwarePage/Screenshot_3.png"
-               alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-          </div>
-        </div>
+        <software_page_info_cards
+            title="Cards Game"
+            img-url="/images/softwarePage/cards-game-banner.jpg"
+            article-text="This is my first take on GUI's in python, i decided to practice what i was learning at the time by making
+                              a simple but fun Graphical User Interface, the best way to do that was to make a game that demaned to
+                              combine all the skills i had.The best category of games was the card games, and that is because of the
+                              low user input they demand,compared to a First Person Shooter(FPS) game. Once i had decided the category
+                              i had to choose one of the many available games. I decided not to get very complicated with the logic
+                              so i went for a simple greek card game named Xeri."
+            :hastags="['python3', 'bots', 'algorithms', 'graphics', 'gaming']"/>
 
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-2xl m-6">
-          <img class="w-full" src="/images/softwarePage/Screenshot_3.png"
-               alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-          </div>
-        </div>
-
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-2xl m-6">
-          <img class="w-full" src="/images/softwarePage/Screenshot_3.png"
-               alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-            <span class="inline-block
-                           bg-gray-200
-                           rounded-full
-                           px-3
-                           py-1
-                           text-sm
-                           font-semibold
-                           text-gray-700
-                           mr-2
-                           mb-2">
-              #photography
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -541,12 +321,14 @@
 <script lang="ts">
 
 import contactInfo from "../components/contactInfo.vue"
+import SoftwarePageInfoCards from "../components/software_page_info_cards.vue"
 import {defineComponent} from "vue"
 
 export default defineComponent({
 	name: "Software",
 	components: {
-		"contact-info": contactInfo
+		"contact-info": contactInfo,
+		"software_page_info_cards": SoftwarePageInfoCards
 	}
 })
 </script>
