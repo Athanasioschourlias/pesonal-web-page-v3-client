@@ -29,9 +29,9 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import("../views/DevelopmentHardware.vue"),
 	},
 	{
-		path: "/dev/chassis",
+		path: "/dev/dev_stack",
 		name: "DevelopmentChassis",
-		component: () => import("../views/DevelopmentChassis.vue"),
+		component: () => import("../views/DevelopmentStack.vue"),
 	},
 	{
 		path: "/:pathMatch(.*)*",

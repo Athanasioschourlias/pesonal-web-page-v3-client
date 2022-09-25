@@ -12,16 +12,16 @@
     </section>
 
     <category_box img-u-r-l="Control_computers.png"
-                  title-bold="Hardware"
-                  short-desc-text="Learn more about the"
+                  title-bold="Hardware/Structural"
+                  short-desc-text="Learn more about the hardware"
                   button-text="Control Computers"
                   router-to="/dev/hardware"/>
 
     <category_box img-u-r-l="chassis.jpg"
-                  title-bold="Chassis"
-                  short-desc-text="All about the structure of my creations"
-                  button-text="Chassis"
-                  router-to="/dev/chassis"/>
+                  title-bold="Software"
+                  short-desc-text="Learn more about the heart for most of my projects"
+                  button-text="Software"
+                  router-to="/dev/dev_stack"/>
 
 
   </div>

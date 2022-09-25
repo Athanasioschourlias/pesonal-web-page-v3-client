@@ -13,7 +13,7 @@ import articles_category_box from "../components/articles_category_box.vue"
 import development_articles from "../components/development_articles.vue"
 
 export default defineComponent({
-	name: "DevelopmentChassis",
+	name: "DevelopmentStack",
 	components:{
 		"articles-category-box": articles_category_box,
 	}
