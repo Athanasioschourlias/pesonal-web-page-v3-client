@@ -29,8 +29,8 @@
                             border-2
                             border-black
                             rounded-xl"
-                   to="/software">
-        Software
+                   to="/about">
+        About
       </router-link>
     </div>
     <div class="flex flex-1-1-40">

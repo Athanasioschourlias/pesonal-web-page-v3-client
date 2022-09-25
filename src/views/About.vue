@@ -325,7 +325,7 @@ import SoftwarePageInfoCards from "../components/software_page_info_cards.vue"
 import {defineComponent} from "vue"
 
 export default defineComponent({
-	name: "Software",
+	name: "About",
 	components: {
 		"contact-info": contactInfo,
 		"software_page_info_cards": SoftwarePageInfoCards

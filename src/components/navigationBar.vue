@@ -23,7 +23,7 @@
                   text-xl
                   justify-center"
       >
-        <router-link class="mx-5 hover:text-gray-900" to="/software">Software</router-link>
+        <router-link class="mx-5 hover:text-gray-900" to="/about">About</router-link>
         <router-link class="mx-5 hover:text-gray-900" to="/dev">Development</router-link>
         <router-link class="mx-5 hover:text-gray-900" to="/admin">Admin Page</router-link>
       </nav>
