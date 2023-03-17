@@ -49,7 +49,7 @@
                             py-2
                             px-4
                             rounded-full">
-              <a href="https://drive.google.com/file/d/1buXnyrBlMMeZ4qJNyirSGMS9ESVP6TUz/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1KEOe0a2v2pfSP3FtizCnwp32QuLJvjhk/view?usp=share_link">
                 Download CV
               </a>
             </button>
