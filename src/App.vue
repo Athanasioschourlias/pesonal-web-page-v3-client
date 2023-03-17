@@ -1,7 +1,12 @@
 <template>
-  <nav-bar/>
-  <router-view/>
-  <ft/>
+  <v-app class="">
+    <nav-bar/>
+    <v-main>
+        <!--Here the main page and components will be rendered-->
+        <RouterView/>
+    </v-main>
+    <ft/>
+  </v-app>
 </template>
 
 <script lang="ts">
