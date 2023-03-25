@@ -23,7 +23,8 @@ import {
 
 import {
 	faChevronUp,
-	faChevronDown
+	faChevronDown,
+	faHeart
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -33,7 +34,8 @@ library.add(
 	faTwitter,
 	faYoutube,
 	faChevronDown,
-	faChevronUp
+	faChevronUp,
+	faHeart
 )
 
 
@@ -42,13 +44,13 @@ const myCustomLightTheme: ThemeDefinition = {
 	colors: {
 		background: "#FFFFFF",
 		surface: "#FFFFFF",
-		primary: "#6200EE",
+		primary: "#9b9b9b",
 		secondary: "#03DAC6",
 		"es-theme-col":"#426B85",
 		"es-theme-col-2":"#B00835",
 		error: "#B00020",
 		info: "#2196F3",
-		success: "#4CAF50",
+		success: "#419844",
 		warning: "#FB8C00",
 		anchor: "#2c2c2c", // defaults to 'primary', overrided to another color
 	}
