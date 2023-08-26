@@ -36,7 +36,7 @@ export default defineComponent({
 		title: String,
 		imgUrl: String,
 		articleText: String,
-		hastags: []
+		hastags: [] as any
 	},
 	data(){
 		return {
