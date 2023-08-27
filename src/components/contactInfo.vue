@@ -16,7 +16,8 @@
         <!--        TODO: Make the mandatory boxes turn red when not field -->
         <!--        TODO: Make the form functional, NEED THE CLIENT SERVER. -->
         <div class="my-4">
-          <input id="name" class="shadow
+          <input id="name" v-model="user_name"
+                 class="shadow
                                         appearance-none
                                         border
                                         rounded-sm
@@ -30,7 +31,8 @@
                                         focus:shadow-outline"
                  type="text"
                  placeholder="Your Name">
-          <input id="mail" class="shadow
+          <input id="mail" v-model="user_mail"
+                 class="shadow
                                         appearance-none
                                         border
                                         rounded-sm
@@ -44,7 +46,8 @@
                                         focus:shadow-outline"
                  type="text"
                  placeholder="Your Mail">
-          <input id="phone" class="shadow
+          <input id="phone" v-model="user_phone"
+                 class="shadow
                                         appearance-none
                                         border
                                         rounded-sm
@@ -59,7 +62,8 @@
                  type="text"
                  placeholder="Your Phone (Optional)">
 
-          <textarea class="resize-none
+          <textarea v-model="user_input"
+                    class="resize-none
                             shadow
                             h-40
                             appearance-none
@@ -73,7 +77,8 @@
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline"
-                    placeholder="Write me Something!!"/>
+                    placeholder="Write me Something!!"
+          />
         </div>
 
         <div class="flex flex-col items-center">
@@ -98,6 +103,8 @@
       </div>
     </div>
   </section>
+
+
 </template>
 
 <script lang="ts">
@@ -107,6 +114,14 @@ export default defineComponent({
 	name: "ContactInfo",
 	components: {
 
+	},
+	data() {
+		return {
+			user_name: "",
+			user_mail:"",
+			user_phone: "",
+			user_input:""
+		}
 	},
 })
 </script>

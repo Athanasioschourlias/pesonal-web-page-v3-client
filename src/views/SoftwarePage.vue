@@ -48,8 +48,9 @@
                             font-bold
                             py-2
                             px-4
-                            rounded-full">
-              <a href="https://drive.google.com/file/d/1buXnyrBlMMeZ4qJNyirSGMS9ESVP6TUz/view?usp=sharing">
+                            rounded-full"
+                    @click="downloadcv()">
+              <a>
                 Download CV
               </a>
             </button>
@@ -323,13 +324,22 @@
 import contactInfo from "../components/contactInfo.vue"
 import SoftwarePageInfoCards from "../components/software_page_info_cards.vue"
 import {defineComponent} from "vue"
+import {fetch_cv} from "../services/utilities.service"
 
 export default defineComponent({
 	name: "Software",
 	components: {
 		"contact-info": contactInfo,
 		"software_page_info_cards": SoftwarePageInfoCards
-	}
+	},
+	methods:{
+		downloadcv() {
+			fetch_cv().catch(error => {
+				//TODO- Here we would not emit an event but maybe we should let the usert know that something failed
+				console.error("Error fetching the cv file: ", error)
+			})
+		}
+	},
 })
 </script>
 
