@@ -19,3 +19,27 @@ export function fetch_cv(): Promise<any> {
 			throw error
 		})
 }
+
+export function send_contact_details(
+	user_name: string,
+	user_main: string,
+	user_phone: string | null,
+	input: string): Promise<any> {
+
+	const config = {
+		data: {
+			name:  user_name,
+			mail:  user_main,
+			phone: user_phone,
+			text:  input
+		}
+	}
+
+	return axiosInstance
+		.post("/utilities/form", config)
+		.then(response => response.data)
+		.catch(error => {
+			console.error(error)
+			throw error
+		})
+}

@@ -82,16 +82,10 @@
         </div>
 
         <div class="flex flex-col items-center">
-          <button class="bg-transparent
-                          bg-green-bright
-                          hover:bg-green-500
-                          text-white
-                          font-semibold
-                          py-2
-                          px-4
-                          rounded-2xl">
-            Send message
-          </button>
+          <v-btn variant="outlined"
+                 @click="send_details()">
+            Send it!
+          </v-btn>
         </div>
       </form>
       <div class="flex flex-col w-1/2 px-6">
@@ -109,6 +103,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import {send_contact_details} from "../services/utilities.service"
 
 export default defineComponent({
 	name: "ContactInfo",
@@ -123,6 +118,27 @@ export default defineComponent({
 			user_input:""
 		}
 	},
+	methods: {
+		send_details() {
+
+			send_contact_details(this.user_name, this.user_mail, this.user_phone, this.user_input)
+				.then(response => {
+					console.log(response)
+
+					this.user_name = ""
+					this.user_mail = ""
+					this.user_phone = ""
+					this.user_input = ""
+
+
+				})
+				.catch(error => {
+					console.error(error)
+					throw error
+				})
+
+		}
+	}
 })
 </script>
 

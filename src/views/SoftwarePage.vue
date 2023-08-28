@@ -314,7 +314,6 @@
       </div>
     </div>
   </section>
-
   <contact-info id="section-contact"/>
   
 </template>
