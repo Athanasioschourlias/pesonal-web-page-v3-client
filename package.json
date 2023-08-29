@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "prebuild": "rm -rf ./dist",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
