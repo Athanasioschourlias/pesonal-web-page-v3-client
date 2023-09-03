@@ -2,7 +2,7 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./helpers/router"
 import "./assets/index.css"
-
+import "material-design-icons-iconfont/dist/material-design-icons.css"
 import {createVuetify, ThemeDefinition} from "vuetify"
 import "vuetify/dist/vuetify.css"
 import "vuetify/styles"

@@ -122,8 +122,7 @@ export default defineComponent({
 		send_details() {
 
 			send_contact_details(this.user_name, this.user_mail, this.user_phone, this.user_input)
-				.then(response => {
-					console.log(response)
+				.then(_response => {
 
 					this.user_name = ""
 					this.user_mail = ""
