@@ -1,5 +1,7 @@
 import axios, { AxiosInstance } from "axios"
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 function getToken() {
 	const jwtToken = localStorage.getItem("token")
@@ -15,7 +17,7 @@ function getToken() {
 
 //TODO - ADD a config file in order to have settigns like this one, in one place
 const instance: AxiosInstance = axios.create({
-	baseURL: "http://localhost:3000/api/v1",
+	baseURL: process.env.API_BASE_URL,
 	headers: {
 		"Content-type": "application/json",
 		"Authorization": `Bearer ${getToken()}`,
