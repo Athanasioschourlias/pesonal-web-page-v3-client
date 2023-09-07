@@ -3,6 +3,7 @@ version: '3'
 services:
   frontend:
     environment:
-      - BACKEND=page-server:3000
-      - FRONTEND=localhost
+      BACKEND: ${API_NAME_PORT}
+      FRONTEND: ${FRONTEND}
+      CERTBOT_EMAIL: ${MY_EMAIL}
     image: chmaikos/devops-front:latest
