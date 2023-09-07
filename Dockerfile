@@ -22,3 +22,4 @@ COPY ./docker/entrypoint.sh entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD [ "/scripts/start_nginx_certbot.sh" ]
