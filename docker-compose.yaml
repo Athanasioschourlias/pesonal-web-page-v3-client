@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  frontend:
+    environment:
+      - BACKEND=page-server:3000
+      - FRONTEND=localhost
+    image: chmaikos/devops-front:latest
