@@ -1,0 +1,23 @@
+# This is a good practice if you have builds that use different stack and need a different docker image
+# And this is how we can use a separate temporary image for compilation step.
+FROM node:18.17.1-alpine AS builder
+RUN apk add --no-cache bash
+
+WORKDIR /usr/src/app
+COPY . .
+# Run custom build script
+RUN chmod +x /usr/src/app/scripts/build.sh
+RUN ["bash", "/usr/src/app/scripts/build.sh"]
+
+FROM nginx:1.25.2-alpine
+RUN apk add --no-cache bash
+COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+
+COPY ./docker/user_kube.conf /etc/nginx/conf.d/nginx.conf.template
+
+WORKDIR /
+COPY ./docker/kube_entrypoint.sh /kube_entrypoint.sh
+RUN chmod +x /kube_entrypoint.sh
+
+ENTRYPOINT ["/kube_entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
