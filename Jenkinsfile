@@ -2,9 +2,6 @@ pipeline {
     agent any
 
     environment {
-        BACKEND="page-server:3000"
-        FRONTEND="dev-thanos.red-net.gr"
-        CERTBOT_EMAIL="chmaikos@gmail.com"
         DOCKER_IMAGE="chmaikos/devops-front"
         DOCKER_TAG="latest"
     }
@@ -22,13 +19,27 @@ pipeline {
             }
         }
 
-        stage('Docker Build and Push') {
+        // TODO: Add tests
+
+        stage('Docker Build and Push Main Image') {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
                         sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f ./docker/Dockerfile ."
                         sh "docker push $DOCKER_IMAGE:$DOCKER_TAG"
+                    }
+                }
+            }
+        }
+
+        stage('Docker Build and Push Kube Image') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
+                        sh "docker build -t $DOCKER_IMAGE:kube -f ./docker/Dockerfile.Kube ."
+                        sh "docker push $DOCKER_IMAGE:kube"
                     }
                 }
             }
