@@ -42,15 +42,12 @@ pipeline {
 
         stage('List pods') {
             steps {
-                withCredentials([file(credentialsId: 'KubernetesCACert', variable: 'caCert')]) {
-                    withKubeConfig(
-                        credentialsId: 'KubectlToken',
-                        serverUrl: 'https://49.13.59.12:6443',
-                        caCertificate: readFile(file: "${env.caCert}"),
-                        namespace: 'devops'
-                    ) {
-                        sh "kubectl get pods"
-                    }
+                withKubeConfig(
+                    credentialsId: 'KubectlToken',
+                    serverUrl: 'https://49.13.59.12:6443',
+                    namespace: 'devops'
+                ) {
+                    sh "kubectl get pods"
                 }
             }
         }
