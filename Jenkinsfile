@@ -21,7 +21,7 @@ pipeline {
 
         // TODO: Add tests
 
-        stage('Docker Build and Push Main Image') {
+        stage('Docker Build and Push Images') {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
@@ -30,11 +30,6 @@ pipeline {
                         sh "docker push $DOCKER_IMAGE:$DOCKER_TAG"
                     }
                 }
-            }
-        }
-
-        stage('Docker Build and Push Kube Image') {
-            steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
@@ -46,11 +41,10 @@ pipeline {
         }
 
         stage('List pods') {
-            withKubeConfig([credentialsId: 'KubectlToken',
-                            serverUrl: 'https://49.13.59.12:6443',
-                            namespace: 'devops'
-                            ]) {
-            sh 'kubectl get pods'
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'KubectlToken', namespace: 'devops', restrictKubeConfigAccess: false, serverUrl: 'https://49.13.59.12:6443') {
+                    sh "kubectl get pods"
+                }
             }
         }
     }
