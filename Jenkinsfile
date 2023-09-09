@@ -40,7 +40,7 @@ pipeline {
             }
         }
 
-        stage('List pods') {
+        stage('Update running pods in production environment') {
             steps {
                 script {
                     sh "kubectl rollout restart deployments/frontend -n devops"
