@@ -5,5 +5,5 @@ set -e
 envsubst '${BACKEND},${FRONTEND}' < /etc/nginx/user_conf.d/user.conf.template > /etc/nginx/user_conf.d/user.conf
 rm /etc/nginx/user_conf.d/user.conf.template
 
-# Execute the CMD from the Dockerfile???
+# Execute the CMD from the Dockerfile
 exec "$@"
