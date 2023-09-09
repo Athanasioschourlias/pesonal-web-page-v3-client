@@ -44,5 +44,14 @@ pipeline {
                 }
             }
         }
+
+        stage('List pods') {
+            withKubeConfig([credentialsId: 'KubectlToken',
+                            serverUrl: 'https://49.13.59.12:6443',
+                            namespace: 'devops'
+                            ]) {
+            sh 'kubectl get pods'
+            }
+        }
     }
 }
