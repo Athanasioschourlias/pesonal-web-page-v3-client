@@ -4,6 +4,8 @@ Welcome to the Personal Web Page V3 Client repository. This project, structured 
 
 ## Table of Contents
 
+---
+
 - [Personal Web Page V3 Client](#personal-web-page-v3-client)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
@@ -30,12 +32,16 @@ Welcome to the Personal Web Page V3 Client repository. This project, structured 
 
 ## Prerequisites
 
+---
+
 Before you begin, ensure you have met the following prerequisites:
 
 - Node.js and npm installed. You can download them from [Node.js](https://nodejs.org/).
 - A basic understanding of TypeScript and Vue 3.
 
 ## Project Structure
+
+---
 
 ### Source Files (`src/`)
 
@@ -58,6 +64,8 @@ This directory contains public assets such as icons and images.
 
 ## Scripts
 
+---
+
 The `package.json` file houses several scripts to streamline the development process:
 
 - `dev`: Start the Vite development server.
@@ -77,6 +85,8 @@ Replace `<script-name>` with the name of the script you want to run.
 Also in the scripts folder you can use the build.sh script to build the project. The same script is used inside the Dockerfiles.
 
 ## Docker Deployment
+
+---
 
 This project is configured to be deployed using Docker and Kubernetes, facilitating both development and production environments. Below, we detail the various files involved in the deployment process and how to use them:
 
@@ -158,10 +168,14 @@ To deploy the application using Docker and Docker Compose, follow these general 
 
 ## CI/CD
 
+---
+
 The repository includes a Jenkinsfile with steps to build, test and push images to docker-hub for both Latest and Kubernetes tags.  
 You can leverage this feature to include automatic deployments to your production environment. As an example, we have included a rolling restart of the kubernetes deployment we have setup
 
 ## Production Deployment
+
+---
 
 If you wan to deploy a production stack of the whole app (Front+Back+Database), you can take a look at the deployment repository for easy deployment in:
 
