@@ -13,7 +13,7 @@ FROM nginx:1.25.2-alpine
 RUN apk add --no-cache bash
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 
-COPY ./docker/user_kube.conf /etc/nginx/conf.d/nginx.conf.template
+COPY ./docker/user_kube.conf.template /etc/nginx/conf.d/nginx.conf.template
 
 WORKDIR /
 COPY ./docker/kube_entrypoint.sh /kube_entrypoint.sh

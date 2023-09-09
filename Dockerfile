@@ -15,7 +15,7 @@ WORKDIR /etc/html/www/static/client
 COPY --from=builder /usr/src/app/dist .
 
 WORKDIR /etc/nginx/user_conf.d
-COPY ./docker/user.conf user.conf.template
+COPY ./docker/user.conf.template user.conf.template
 
 WORKDIR /
 COPY ./docker/entrypoint.sh entrypoint.sh
