@@ -26,7 +26,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
-                        sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f ./docker/Dockerfile ."
+                        sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f Dockerfile ."
                         sh "docker push $DOCKER_IMAGE:$DOCKER_TAG"
                     }
                 }
@@ -38,7 +38,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
-                        sh "docker build -t $DOCKER_IMAGE:kube -f ./docker/Dockerfile.Kube ."
+                        sh "docker build -t $DOCKER_IMAGE:kube -f Dockerfile.Kube ."
                         sh "docker push $DOCKER_IMAGE:kube"
                     }
                 }
