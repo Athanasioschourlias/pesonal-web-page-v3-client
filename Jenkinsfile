@@ -42,11 +42,7 @@ pipeline {
 
         stage('List pods') {
             steps {
-                withKubeConfig(
-                    credentialsId: 'KubectlToken',
-                    serverUrl: 'https://49.13.59.12:6443',
-                    namespace: 'devops'
-                ) {
+                withKubeConfig(clusterName: 'k3s', contextName: 'k3s', credentialsId: 'KubectlToken', namespace: 'devops', restrictKubeConfigAccess: false, serverUrl: 'https://49.13.59.12:6443') {
                     sh "kubectl get pods"
                 }
             }
