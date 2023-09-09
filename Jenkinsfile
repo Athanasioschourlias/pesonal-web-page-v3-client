@@ -42,8 +42,8 @@ pipeline {
 
         stage('List pods') {
             steps {
-                withKubeConfig(clusterName: 'k3s', contextName: 'k3s', credentialsId: 'KubectlToken', namespace: 'devops', restrictKubeConfigAccess: false, serverUrl: 'https://49.13.59.12:6443') {
-                    sh "kubectl get pods"
+                script {
+                    sh "kubectl rollout restart deployments/frontend -n devops"
                 }
             }
         }
