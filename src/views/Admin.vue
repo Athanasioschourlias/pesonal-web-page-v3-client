@@ -1,6 +1,7 @@
 <template>
   <v-container class="d-flex flex-column">
 
+    <!-- USER REGISTRATION-->
     <v-card
         class="mx-auto flex-grow-1 flex-shrink-0"
         max-width="100%"
@@ -15,10 +16,18 @@
             variant="underlined"
         ></v-text-field>
 
+        <v-select
+            v-model="role"
+            label="Select"
+            :items="['admin', 'member', 'moderator']"
+            variant="outlined"
+        ></v-select>
+
         <v-text-field
             v-model="password"
             color="primary"
             label="Password"
+            type="password"
             placeholder="Enter your password"
             variant="underlined"
         ></v-text-field>
@@ -29,14 +38,14 @@
       <v-card-actions>
         <v-spacer></v-spacer>
 
-        <v-btn color="success">
+        <v-btn color="success" @click="register_admin()">
           Complete Registration
         </v-btn>
       </v-card-actions>
     </v-card>
 
 
-
+    <!-- ARTICLE POSTER -->
     <v-card
         class="mx-auto mt-20 flex-grow-1 flex-shrink-0"
         max-width="100%"
@@ -86,7 +95,7 @@
 
 import {defineComponent} from "vue"
 import {fetch_categories} from "../services/blog.service"
-import {post_article} from "../services/admin.service"
+import {create_user, post_article} from "../services/admin.service"
 
 export default defineComponent({
 	name: "AdminPage",
@@ -96,6 +105,7 @@ export default defineComponent({
 			password: "",
 			category_selected: "",
 			art_title: "",
+			role: "",
 			story: "",
 			categories_list: [""]
 		}
@@ -109,6 +119,23 @@ export default defineComponent({
 		post_article() {
 			post_article(this.category_selected, this.art_title, this.story).then((res) => {
 				console.log(res)
+				this.category_selected = ""
+				this.art_title = ""
+				this.story = ""
+
+			}).catch(err => {
+				console.log(err)
+			})
+		},
+
+		register_admin() {
+			create_user(this.username, this.role, this.password).then((res) => {
+				console.log(res)
+				this.username = ""
+				this.role = ""
+				this.password = ""
+
+
 			}).catch(err => {
 				console.log(err)
 			})

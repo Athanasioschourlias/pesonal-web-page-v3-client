@@ -80,6 +80,8 @@ export default defineComponent({
 			this.login()
 
 			setTimeout(() => (this.loading = false), 2000)
+
+			this.$emit("updateProp", false)
 		},
 		required (v: any) {
 			return !!v || "Field is required"
@@ -102,10 +104,12 @@ export default defineComponent({
 
 					console.log(localStorage.getItem("role"))
 				}
-				this.password = ""
-				this.username = ""
+				this.reloadPage()
 			})
 		},
+		reloadPage() {
+			window.location.reload()
+		}
 	}
 
 })
