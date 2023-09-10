@@ -36,6 +36,7 @@
             :class="{'text-black':arrowDir, 'text-gray-500':!arrowDir}"/>
       </v-btn>
       <v-btn
+          v-if="role === 'admin'"
           @click="!are_u_sure"
       >
         <font-awesome-icon
@@ -77,8 +78,6 @@
 import {defineComponent} from "vue"
 import dynamic_modal from "./dynamic_modal.vue"
 import {delete_article, get_article} from "../services/admin.service"
-import {article} from "../types/article.types"
-import {ar} from "vuetify/locale"
 
 export default defineComponent({
 	name: "BlogArticlesCards",
@@ -97,6 +96,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
+			role: "guest",
 			are_u_sure: false,
 			arrowDown: ["fa", "chevron-down"],
 			arrowUp: ["fa", "chevron-up"],
@@ -106,6 +106,17 @@ export default defineComponent({
 	computed: {
 		arrowDirection: function() {
 			return this.arrowDir ? this.arrowUp : this.arrowDown
+		}
+	},
+	mounted() {
+		// Retrieve an item from localStorage
+		const storedData = localStorage.getItem("role")
+
+		// Check if the item exists in localStorage
+		if(storedData !== null) {
+			// The item exists, you can use it
+			const parsedData = JSON.parse(storedData)
+			this.role = parsedData.role
 		}
 	},
 
