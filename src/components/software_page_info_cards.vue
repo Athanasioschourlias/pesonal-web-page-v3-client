@@ -27,7 +27,6 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
-import development_articles from "./development_articles.vue"
 
 export default defineComponent({
 	name: "SoftwarePageInfoCards",
