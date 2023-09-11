@@ -1,5 +1,5 @@
 import axiosInstance from "../helpers/http-common.helper"
-import {article} from "../types/article.types";
+import {article} from "../types/article.types"
 
 
 export function post_article(cat: string, art_title: string, story: string): Promise<any> {
@@ -60,5 +60,24 @@ export function create_user(username: string, role: string, password: string): P
 		.catch(error => {
 			console.error(error)
 			throw error
+		})
+}
+
+export function register_member(username: string, password: string): Promise<string> {
+
+	const options = {
+		data: {
+			username: username,
+			role: "member",
+			password: password,
+		}
+	}
+
+	return axiosInstance
+		.post("/admin/register",options)
+		.then(response => response.data)
+		.catch(error => {
+			console.error(error)
+			return error
 		})
 }

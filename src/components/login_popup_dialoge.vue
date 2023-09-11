@@ -33,8 +33,17 @@
                 type="submit"
                 variant="elevated"
             >
-              Sign In
+              {{buttonText}}
             </v-btn>
+            
+            <p class="text-medium-emphasis">
+              Get weekly post collections by becoming a member,
+              <a
+                  color="primary"
+                  class="text-decoration-underline"
+                  @click="toggleButtonText"
+              >Register</a>
+            </p>
           </v-form>
         </v-card>
       </v-sheet>
@@ -53,6 +62,7 @@
 import {logInUser} from "../services/authorization.service"
 import {defineComponent} from "vue"
 import {login_resp} from "../types/auth.types"
+import {register_member} from "../services/admin.service"
 
 export default defineComponent({
 	name: "AdminPage",
@@ -64,6 +74,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
+			register: false,
 			form: false,
 			username: "",
 			password: "",
@@ -71,18 +82,31 @@ export default defineComponent({
 			wrong_pass: false
 		}
 	},
+	computed: {
+		buttonText() {
+			return this.register ? "Register" : "Log In"
+		}
+	},
 	methods: {
+		toggleButtonText() {
+			this.register = !this.register
+		},
+    
 		onSubmit () {
 			if(!this.form) return
 
 			this.loading = true
 
-			this.login()
+			if(this.register)
+				this.registerOne()
+			else
+				this.login()
 
 			setTimeout(() => (this.loading = false), 2000)
 
 			this.$emit("updateProp", false)
 		},
+		
 		required (v: any) {
 			return !!v || "Field is required"
 		},
@@ -103,10 +127,18 @@ export default defineComponent({
 					localStorage.setItem("role", JSON.stringify({ role: user_token.user.role }))
 
 					console.log(localStorage.getItem("role"))
+
 				}
 				this.reloadPage()
 			})
 		},
+    
+		registerOne() {
+			register_member(this.username, this.password).then((res) => {
+				console.log(res)
+			})
+		},
+    
 		reloadPage() {
 			window.location.reload()
 		}

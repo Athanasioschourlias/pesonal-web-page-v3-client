@@ -3,10 +3,17 @@
       activator="parent"
       width="auto"
   >
-    <v-card>
-      <slot name="card">
+    <v-card
+        width="400"
+        :title="title"
+        class="flex-column flex"
+    >
+      <v-card-actions class=" justify-center">
+        <slot name="card_actions">
 
-      </slot>
+        </slot>
+      </v-card-actions>
+    </v-card>
 <!--      <v-card-text>-->
 <!--        -->
 <!--        -->
@@ -15,7 +22,6 @@
 <!--      <v-card-actions>-->
 <!--        <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>-->
 <!--      </v-card-actions>-->
-    </v-card>
   </v-dialog>
 </template>
 
@@ -26,10 +32,7 @@ import {defineComponent} from "vue"
 export default defineComponent({
 	name: "DynamicModal",
 	props: {
-    are_u_sure: {
-			type: Boolean,
-			default: false,
-		},
+    title: String
 	},
 	data() {
 		return {

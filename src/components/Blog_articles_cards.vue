@@ -35,9 +35,10 @@
             size="md"
             :class="{'text-black':arrowDir, 'text-gray-500':!arrowDir}"/>
       </v-btn>
+
       <v-btn
           v-if="role === 'admin'"
-          @click="!are_u_sure"
+          @click="toggleDel()"
       >
         <font-awesome-icon
             :icon='["fa", "trash"]'
@@ -46,19 +47,11 @@
       </v-btn>
     </v-card-actions>
 
-    <modal v-model="are_u_sure" :are_u_sure="are_u_sure">
-      <template #card>
-        <v-card
-            width="400"
-            title="Would you like to delete this article?"
-            class="flex-column flex"
-        >
-          <v-card-actions class=" justify-center">
-            <v-btn variant="outlined" @click="delete_article()">
-              Yes
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+    <modal v-if="are_u_sure" :title="'Would you like to delete this article?'">
+      <template #card_actions>
+        <v-btn variant="outlined" @click="delete_article()">
+          Yes
+        </v-btn>
       </template>
     </modal>
 
@@ -109,6 +102,7 @@ export default defineComponent({
 		}
 	},
 	mounted() {
+    
 		// Retrieve an item from localStorage
 		const storedData = localStorage.getItem("role")
 
@@ -121,7 +115,12 @@ export default defineComponent({
 	},
 
 	methods: {
+
+		toggleDel: function() {
+			this.are_u_sure = !this.are_u_sure
+		},
 		delete_article: function() {
+
 			get_article().then((article ) => {
 				article.forEach((art) => {
 
