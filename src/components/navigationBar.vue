@@ -23,7 +23,7 @@
           Software
       </v-btn>
     </router-link>
-    <router-link to="/blog">
+    <router-link v-if="role === 'member' || role === 'admin'" to="/blog">
       <v-btn text
              color="anchor"
              class="hover:bg-neutral-50">
