@@ -136,6 +136,11 @@ export default defineComponent({
 		registerOne() {
 			register_member(this.username, this.password).then((res) => {
 				console.log(res)
+
+				this.reloadPage()
+			}).catch((err) => {
+				console.log(`The user could not be crated: ${err}`)
+        this.reloadPage()
 			})
 		},
     

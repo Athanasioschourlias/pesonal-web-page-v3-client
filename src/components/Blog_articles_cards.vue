@@ -89,7 +89,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			role: "guest",
+			role: "member",
 			are_u_sure: false,
 			arrowDown: ["fa", "chevron-down"],
 			arrowUp: ["fa", "chevron-up"],
