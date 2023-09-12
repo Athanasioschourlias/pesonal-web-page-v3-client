@@ -24,7 +24,8 @@ import {
 import {
 	faChevronUp,
 	faChevronDown,
-	faHeart
+	faHeart,
+	faTrash
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -35,7 +36,8 @@ library.add(
 	faYoutube,
 	faChevronDown,
 	faChevronUp,
-	faHeart
+	faHeart,
+	faTrash
 )
 
 

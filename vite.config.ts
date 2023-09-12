@@ -1,7 +1,6 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import {fileURLToPath, URL} from "node:url"
-import {tr} from "vuetify/locale"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,8 +15,7 @@ export default defineConfig({
 
 		// proxy: {
 		//   "/api/v1/": {
-		//     target: "127.0.0.1:5000",
-		//     changeOrigin: true,
+		//     target: "localhost:3000"
 		//   }
 		// }
 	}

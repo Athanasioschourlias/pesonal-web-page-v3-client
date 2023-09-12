@@ -4,7 +4,7 @@ type article = {
     image: string,
     article_text: string,
     date?: Date,
-    id?: string
+    _id?: string
 }
 
 export {

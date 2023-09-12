@@ -61,7 +61,7 @@
 import {defineComponent} from "vue"
 import {fetch_all_articles, fetch_articles_by_category, fetch_categories} from "../services/blog.service"
 import {article} from "../types/article.types"
-import Blog_articles_cards from "./Blog_articles_cards.vue"
+import Blog_articles_cards from "../components/Blog_articles_cards.vue"
 
 export default defineComponent({
 	name: "Blog",
