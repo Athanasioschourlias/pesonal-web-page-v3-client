@@ -38,11 +38,20 @@
       </v-btn>
     </router-link>
     <v-btn
+        v-if="role === 'guest'"
         color="anchor"
         class="hover:bg-neutral-50"
         @click="dialog = true"
     >
       LogIn
+    </v-btn>
+    <v-btn
+        v-if="role === 'member' || role === 'admin'"
+        color="anchor"
+        class="hover:bg-neutral-50"
+        @click="logout()"
+    >
+      LogOut
     </v-btn>
 <!--    TODO- Feature idea, create a dark theme for the page-->
 <!--    <v-btn class="p-4" @click="toggleTheme">Change Theme</v-btn>-->
@@ -82,9 +91,17 @@ export default defineComponent({
 		}
 	},
 	methods: {
+		logout() {
+			localStorage.clear()
+
+			this.$router.push({ path: "/" })
+
+			this.$router.go(0)
+		},
+
 		updateDialogValue(newDialogValue: boolean) {
 			this.dialog = newDialogValue
-		}
+		},
 	}
 })
 </script>
