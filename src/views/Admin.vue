@@ -90,7 +90,7 @@
     <v-card class="mx-auto mt-20 flex-grow-1 flex-shrink-0"
       max-width="100%"
       min-width="60%"
-      title="Adding an article">
+      title="User Management">
 
       <v-container
         v-for="user in user_list"
