@@ -5,7 +5,7 @@
     <v-card
         class="mx-auto flex-grow-1 flex-shrink-0"
         max-width="100%"
-        min-width="40%"
+        min-width="60%"
         title="User Registration"
     >
       <v-container>
@@ -49,7 +49,7 @@
     <v-card
         class="mx-auto mt-20 flex-grow-1 flex-shrink-0"
         max-width="100%"
-        min-width="40%"
+        min-width="60%"
         title="Adding an article"
     >
       <v-container>
@@ -87,6 +87,22 @@
     </v-card>
 
 
+    <v-card class="mx-auto mt-20 flex-grow-1 flex-shrink-0"
+      max-width="100%"
+      min-width="60%"
+      title="Adding an article">
+
+      <v-container
+        v-for="user in user_list"
+        :key="user._id">
+        <user-card
+            :user_id="user._id"
+            :username="user.username"
+            :role="user.role"
+        />
+      </v-container>
+    </v-card>
+
 
   </v-container>
 </template>
@@ -95,10 +111,15 @@
 
 import {defineComponent} from "vue"
 import {fetch_categories} from "../services/blog.service"
-import {create_user, post_article} from "../services/admin.service"
+import {create_user, fetch_all_users, post_article} from "../services/admin.service"
+import {User} from "../types/auth.types"
+import user_management_card from "../components/user_management_card.vue"
 
 export default defineComponent({
 	name: "AdminPage",
+	components: {
+		"user-card": user_management_card
+	},
 	data() {
 		return {
 			username: "",
@@ -107,12 +128,20 @@ export default defineComponent({
 			art_title: "",
 			role: "",
 			story: "",
-			categories_list: [""]
+			categories_list: [""],
+			user_list: [] as User []
 		}
 	},
 	mounted() {
 		fetch_categories().then((data) => {
 			this.categories_list = Object.values(data)
+		})
+
+    
+		fetch_all_users().then((users) => {
+
+			this.user_list = users
+
 		})
 	},
 	methods: {

@@ -1,5 +1,7 @@
 import axiosInstance from "../helpers/http-common.helper"
 import {article} from "../types/article.types"
+import {User} from "../types/auth.types"
+import {res} from "../types/general.types";
 
 
 export function post_article(cat: string, art_title: string, story: string): Promise<any> {
@@ -79,5 +81,47 @@ export function register_member(username: string, password: string): Promise<str
 		.catch(error => {
 			console.error(error)
 			return error
+		})
+}
+
+export function fetch_all_users(): Promise<User []> {
+
+	return axiosInstance
+		.get("/admin/users/all")
+		.then(response => response.data as User [])
+		.catch(error => {
+			console.error(error)
+			throw error
+		})
+}
+
+export function deleteUserById(user_id: string): Promise<res> {
+
+	return axiosInstance
+		.delete(`/admin/users/id?id=${user_id}`)
+		.then(response => response as res)
+		.catch(error => {
+			console.error(error)
+			throw error
+		})
+}
+
+export function
+modifyUserRole(user_name: string, user_role: string, user_id: string):
+	Promise<res> {
+
+	const options = {
+		data: {
+			username: user_name,
+			role: user_role
+		}
+	}
+
+	return axiosInstance
+		.put(`/admin/users/id?id=${user_id}`, options)
+		.then(response => response as res)
+		.catch(error => {
+			console.error(error)
+			throw error
 		})
 }
