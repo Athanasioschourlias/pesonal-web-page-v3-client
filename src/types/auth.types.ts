@@ -6,6 +6,14 @@ type login_resp = {
 
 }
 
+type User = {
+    _id: string,
+    "username": string,
+    "role": string,
+    "password": string
+}
+
 export {
-	login_resp
+	login_resp,
+	User
 }

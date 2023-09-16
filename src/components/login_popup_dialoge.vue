@@ -140,7 +140,7 @@ export default defineComponent({
 				this.reloadPage()
 			}).catch((err) => {
 				console.log(`The user could not be crated: ${err}`)
-        this.reloadPage()
+				this.reloadPage()
 			})
 		},
     
