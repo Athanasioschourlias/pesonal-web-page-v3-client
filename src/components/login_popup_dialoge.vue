@@ -19,6 +19,7 @@
                 :readonly="loading"
                 :rules="[required]"
                 label="Password"
+                type="password"
                 placeholder="Enter your password"
             ></v-text-field>
 
